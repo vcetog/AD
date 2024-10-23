@@ -1,0 +1,31 @@
+main.tf
+
+
+
+resource "github_repository" "example" {
+  name        = "example1"
+  description = "My awesome codebase"
+
+  visibility = "public"
+
+}
+
+
+
+
+
+provider.tf
+
+
+terraform {
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 6.0"
+    }
+  }
+}
+
+provider "github" {
+    token ="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"
+}
